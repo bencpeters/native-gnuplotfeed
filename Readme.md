@@ -13,14 +13,15 @@ This utility requries gnuplot. The latest version can be found at http://www.gnu
 ## Usage
 
 Options for the command line utility are as follows:
-	gnuplotfeed NUMBER_OF_STREAMS NUMBER_OF_SAMPLE_POINTS CHART_TITLE X_LABEL Y_LABEL SERIES1_TITLE SERIES2_TITLE, ...
+    gnuplotfeed NUMBER_OF_STREAMS NUMBER_OF_SAMPLE_POINTS CHART_TITLE X_LABEL Y_LABEL SERIES1_TITLE SERIES2_TITLE, ...
+
 The number of sample points is the number of points that the chart will display before moving forward in time.
 
 In order to use gnuplotfeed, the output from the driver should be of the form
-	STREAM_INDEX:STREAM_VALUE,ANOTHER_STREAM_INDEX:ANOTHER_STREAM_VALUE,...
+    STREAM_INDEX:STREAM_VALUE,ANOTHER_STREAM_INDEX:ANOTHER_STREAM_VALUE,...
 
 As an example, the make check driver utility generates random numbers between 0 and 10 and outputs two streams with the format:
-	0:4.23,1:5.26
+    0:4.23,1:5.26
 
 Then, to use the utility, simply pipe the commmands together:
-	driver | gnuplotfeed 1 50 SampleTitle X Y SeriesTitle
+    driver | gnuplotfeed 1 50 SampleTitle X Y SeriesTitle

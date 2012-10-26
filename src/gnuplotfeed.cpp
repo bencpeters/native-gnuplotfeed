@@ -228,6 +228,7 @@ void GetRidOfOldData ( vector <stream> * data , int samples)
 void UpdatePlot ( Gnuplot * plot, vector <stream> * data, options * p_options )
 {
   plot->reset_plot ();
+  plot->remove_tmpfiles ();
   plot->set_grid ();
   plot->set_smooth ();
   plot->set_style("points");
